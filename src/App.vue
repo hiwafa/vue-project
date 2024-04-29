@@ -1,12 +1,20 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+<script lang="ts">
+
+export default {
+  name: "App",
+  data(){
+    return {
+      message: "Hello world with vue.js"
+    }
+  }
+}
 
 </script>
 
 <template>
   <div class="wrapper">
-    
-    This is the simplest vue page
+
+   {{ message }}
 
   </div>
 </template>
