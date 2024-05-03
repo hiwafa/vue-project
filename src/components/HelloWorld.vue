@@ -1,14 +1,20 @@
 <script>
 
+import ComCopo from "./ComCopo.vue"
 
 export default{
     name: "HelloWorld",
-    props: ['msg']
+    props: ['msg', "heroName"],
+    components: {
+        ComCopo
+    }
 }
 
 </script>
 
 <template>
 
-    <div> This is Hello world Component: {{msg}} </div>
+    <ComCopo />
+    <div> This is Hello world Component: {{msg}} - {{heroName}}</div>
+    
 </template>

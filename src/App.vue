@@ -8,7 +8,8 @@ export default {
       txt: "this is text binding <h1> Hello </h1>",
       htmlTxt: "this is an html text binding <h1> Hello </h1>",
       id1: "redText",
-      bld: "boldText"
+      bld: "boldText",
+      heroName: "My Hero Name"
     }
   },
   components: {
@@ -28,7 +29,7 @@ export default {
   <p v-bind:id="id1">This is a red text</p>
   <p :id="id1" :class="bld" class="fntSize">This is a red text</p>
 
-  <HelloWorld msg="Hi from Parent"/>
+  <HelloWorld msg="Hi from Parent" :hero-name="heroName"/>
 
   </div>
 </template>
