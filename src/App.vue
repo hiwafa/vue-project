@@ -1,5 +1,5 @@
 <script lang="ts">
-
+import HelloWorld  from "./components/HelloWorld.vue";
 export default {
   name: "App",
   data(){
@@ -11,6 +11,9 @@ export default {
       bld: "boldText"
     }
   },
+  components: {
+    HelloWorld
+  }
 }
 
 </script>
@@ -24,6 +27,8 @@ export default {
   <p v-html="htmlTxt"></p>
   <p v-bind:id="id1">This is a red text</p>
   <p :id="id1" :class="bld" class="fntSize">This is a red text</p>
+
+  <HelloWorld />
 
   </div>
 </template>
