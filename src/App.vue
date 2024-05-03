@@ -28,7 +28,7 @@ export default {
   <p v-bind:id="id1">This is a red text</p>
   <p :id="id1" :class="bld" class="fntSize">This is a red text</p>
 
-  <HelloWorld />
+  <HelloWorld msg="Hi from Parent"/>
 
   </div>
 </template>

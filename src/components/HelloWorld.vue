@@ -2,12 +2,13 @@
 
 
 export default{
-    name: "HelloWorld"
+    name: "HelloWorld",
+    props: ['msg']
 }
 
 </script>
 
 <template>
 
-    <div> This is Hello world Component </div>
+    <div> This is Hello world Component: {{msg}} </div>
 </template>
