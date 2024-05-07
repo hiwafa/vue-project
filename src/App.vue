@@ -10,7 +10,8 @@ export default {
       id1: "redText",
       bld: "boldText",
       heroName: "My Hero Name",
-      counter: 0
+      counter: 0,
+      userInput: ""
     }
   },
   components: {
@@ -48,6 +49,9 @@ export default {
   <button @click="increment">Click Me2: {{counter}}</button>
   <p>Get from methods: {{getMethodCounter()}}</p>
   <p>Get from computed: {{getComputedCounter}}</p>
+  <input id="userInput" type="text" v-model="userInput" />
+  {{userInput}}
+  <br/>
 
   <HelloWorld msg="Hi from Parent" :hero-name="heroName"/>
 
