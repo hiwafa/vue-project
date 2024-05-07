@@ -38,8 +38,9 @@
     ]);
 
     const myVars = reactive({
-        isLoggedin: true,
-        numberOfusers: 1
+        isLoggedin: false,
+        numberOfusers: 11,
+        isShow: true
     })
 
 
@@ -55,5 +56,21 @@
     <h1 v-if="myVars.isLoggedin">You are logged in</h1>
     <h1 v-else-if="myVars.numberOfusers == 1">the number of users {{myVars.numberOfusers}}</h1>
     <h1 v-else>There is no true condition</h1>
-   
+
+    <h1 v-show="myVars.isShow">Showable!!!!!</h1>
+    
+    <h2 v-bind:style="[{color: 'green'}, {backgroundColor: 'yellow'}]">Vue Style</h2>
+    <h2 :style="1 === 1 && {color: 'blue'}">Vue Style 2</h2>
+
+    <h3 :class="{
+        italicClass: myVars.isShow
+    }">I am italic text</h3>
+
 </template>
+
+<style scoped>
+
+.italicClass {
+    font-style: italic
+}
+</style>
