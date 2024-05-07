@@ -9,11 +9,17 @@ export default {
       htmlTxt: "this is an html text binding <h1> Hello </h1>",
       id1: "redText",
       bld: "boldText",
-      heroName: "My Hero Name"
+      heroName: "My Hero Name",
+      counter: 0
     }
   },
   components: {
     HelloWorld
+  },
+  methods: {
+    increment(){
+      this.counter++;
+    },
   }
 }
 
@@ -28,6 +34,9 @@ export default {
   <p v-html="htmlTxt"></p>
   <p v-bind:id="id1">This is a red text</p>
   <p :id="id1" :class="bld" class="fntSize">This is a red text</p>
+
+  <button v-on:click="increment">Click Me1: {{counter}}</button>
+  <button @click="increment">Click Me2: {{counter}}</button>
 
   <HelloWorld msg="Hi from Parent" :hero-name="heroName"/>
 
