@@ -30,6 +30,11 @@ export default {
     getComputedCounter(){
       return this.counter;
     }
+  },
+  watch: {
+    counter(newValue, oldValue){
+      if(newValue > oldValue && newValue === 15) alert("reached 15")
+    }
   }
 }
 
@@ -46,7 +51,7 @@ export default {
   <p :id="id1" :class="bld" class="fntSize">This is a red text</p>
 
   <button v-on:click="increment">Click Me1: {{counter}}</button>
-  <button @click="increment">Click Me2: {{counter}}</button>
+  <button @click="counter--">Click Me2: {{counter}}</button>
   <p>Get from methods: {{getMethodCounter()}}</p>
   <p>Get from computed: {{getComputedCounter}}</p>
   <input id="userInput" type="text" v-model="userInput" />
