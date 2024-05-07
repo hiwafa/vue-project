@@ -20,6 +20,15 @@ export default {
     increment(){
       this.counter++;
     },
+
+    getMethodCounter(){
+      return this.counter
+    }
+  },
+  computed: {
+    getComputedCounter(){
+      return this.counter;
+    }
   }
 }
 
@@ -37,6 +46,8 @@ export default {
 
   <button v-on:click="increment">Click Me1: {{counter}}</button>
   <button @click="increment">Click Me2: {{counter}}</button>
+  <p>Get from methods: {{getMethodCounter()}}</p>
+  <p>Get from computed: {{getComputedCounter}}</p>
 
   <HelloWorld msg="Hi from Parent" :hero-name="heroName"/>
 
