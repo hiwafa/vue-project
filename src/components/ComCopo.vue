@@ -6,8 +6,6 @@
         count: 110
     });
 
-
-
     /*
     
 
@@ -28,10 +26,34 @@
     
     */
 
+
+    const users = ref([
+        {id: 1, name: "Name 1"},
+        {id: 2, name: "Name 2"},
+        {id: 3, name: "Name 3"},
+        {id: 4, name: "Name 4"},
+        {id: 5, name: "Name 5"},
+        {id: 6, name: "Name 6"},
+        {id: 7, name: "Name 7"},
+    ]);
+
+    const myVars = reactive({
+        isLoggedin: true,
+        numberOfusers: 1
+    })
+
+
 </script>
 
 <template>
 
    {{message}}
    {{counter.count}}
+
+   <ul><li v-for="user in users" :key="user.id">{{user.name}}</li></ul>
+
+    <h1 v-if="myVars.isLoggedin">You are logged in</h1>
+    <h1 v-else-if="myVars.numberOfusers == 1">the number of users {{myVars.numberOfusers}}</h1>
+    <h1 v-else>There is no true condition</h1>
+   
 </template>
