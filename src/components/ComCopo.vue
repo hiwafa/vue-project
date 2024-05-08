@@ -70,7 +70,7 @@ const myVars = reactive({
     }">I am italic text</h3>
 
 
-    <User userName="My Name updated!" />
+    <User userName="My Name updated!!!" />
 
 </template>
 
