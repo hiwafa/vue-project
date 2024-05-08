@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, reactive, toRefs } from 'vue';
 
 const { userName } = defineProps({
     userName: {
@@ -7,19 +7,25 @@ const { userName } = defineProps({
     }
 })
 
-const nameUser = ref("");
+const formsData = reactive({
+    firstName: "",
+    lastName: ""
+})
 
 const onSubmit = event => {
     event.preventDefault();
-    console.log("event: ", event);
+    console.log("data: ", toRefs(formsData));
 }
+
+
 
 </script>
 
 <template>
     <div class="userClass">
         <form @submit="onSubmit">
-            <input type="text" name="nameUser" v-model="nameUser" />
+            <input type="text" name="firstName" v-model="formsData.firstName" />
+            <input type="text" name="lastName" v-model="formsData.lastName" />
             <button>Submit</button>
         </form>
     </div>
