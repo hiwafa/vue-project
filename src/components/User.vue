@@ -9,11 +9,12 @@ const { userName } = defineProps({
 
 const formsData = reactive({
     firstName: "",
-    lastName: ""
+    lastName: "",
+    plz: 0
 })
 
 const onSubmit = event => {
-    event.preventDefault();
+    // event.preventDefault();
     console.log("data: ", toRefs(formsData));
 }
 
@@ -23,11 +24,14 @@ const onSubmit = event => {
 
 <template>
     <div class="userClass">
-        <form @submit="onSubmit">
-            <input type="text" name="firstName" v-model="formsData.firstName" />
-            <input type="text" name="lastName" v-model="formsData.lastName" />
+        <form @submit.prevent="onSubmit">
+            <input type="text" name="firstName" v-model.trim="formsData.firstName" />
+            <input type="text" name="lastName" v-model.trim="formsData.lastName" />
+            <input type="number" name="zipCode" v-model.number="formsData.plz" />
             <button>Submit</button>
         </form>
+        {{ formsData.firstName }}
+        {{ formsData.lastName }}
     </div>
 </template>
 
