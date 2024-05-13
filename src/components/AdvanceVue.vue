@@ -2,7 +2,7 @@
     <div class="advanceEnvironment">
         You learn: {{ topic }}
 
-        <button @click="childClick">Click Parent Function</button>
+        <button @click="childClick('Data from Child')">Click Parent Function</button>
 
     </div>
 </template>

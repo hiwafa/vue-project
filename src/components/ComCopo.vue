@@ -45,8 +45,8 @@ const myVars = reactive({
     isShow: true
 })
 
-function callMefromChild() {
-    alert("Hi Dear");
+function callMefromChild(data) {
+    alert("Hi Dear: " + data);
 }
 
 </script>
