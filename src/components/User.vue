@@ -24,6 +24,16 @@ const onSubmit = event => {
 
 <template>
     <div class="userClass">
+        <div v-once> this text will be rendered only one time</div>
+        <div v-pre>
+
+            public class JavaApp{
+            --public static void main(String args[]){
+            ----System.out.println("Hello World");
+            --}
+            }
+
+        </div>
         <form @submit.prevent="onSubmit">
             <input type="text" name="firstName" v-model.trim.lazy="formsData.firstName" />
             <input type="text" name="lastName" v-model.trim="formsData.lastName" />
