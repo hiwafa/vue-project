@@ -1,6 +1,7 @@
 <script setup>
 import { ref, reactive } from "vue";
 import User from './User.vue';
+import AdvanceVue from "./AdvanceVue.vue";
 
 const message = ref("Com Hello World");
 const counter = reactive({
@@ -44,10 +45,15 @@ const myVars = reactive({
     isShow: true
 })
 
+function callMefromChild() {
+    alert("Hi Dear");
+}
 
 </script>
 
 <template>
+
+    <AdvanceVue topic="Advanced Topic" :childClick="callMefromChild" />
 
     {{ message }}
     {{ counter.count }}
