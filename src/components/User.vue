@@ -25,7 +25,7 @@ const onSubmit = event => {
 <template>
     <div class="userClass">
         <form @submit.prevent="onSubmit">
-            <input type="text" name="firstName" v-model.trim="formsData.firstName" />
+            <input type="text" name="firstName" v-model.trim.lazy="formsData.firstName" />
             <input type="text" name="lastName" v-model.trim="formsData.lastName" />
             <input type="number" name="zipCode" v-model.number="formsData.plz" />
             <button>Submit</button>
