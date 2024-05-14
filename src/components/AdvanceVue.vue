@@ -14,12 +14,19 @@
         <button @click="handleToggle">Toggle Button</button>
         <p v-if="toggling">This text will be toggled</p>
         <p>Computed Data: {{ computedValue }} </p>
+        <p ref="onMountData">Hello</p>
 
     </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+
+const onMountData = ref(null);
+
+onMounted(() => {
+    onMountData.value.textContent = "Component Mounted..."
+});
 
 const computedValue = computed(() => {
     return 10 + 10;
