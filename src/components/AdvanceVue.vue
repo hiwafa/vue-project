@@ -20,12 +20,16 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 
 const onMountData = ref(null);
 
 onMounted(() => {
     onMountData.value.textContent = "Component Mounted..."
+});
+
+watch(onMountData, (newValue) => {
+    console.log("New Mounted Value: ", newValue.textContent);
 });
 
 const computedValue = computed(() => {
