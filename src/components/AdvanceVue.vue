@@ -13,14 +13,17 @@
 
         <button @click="handleToggle">Toggle Button</button>
         <p v-if="toggling">This text will be toggled</p>
-
+        <p>Computed Data: {{ computedValue }} </p>
 
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
+const computedValue = computed(() => {
+    return 10 + 10;
+});
 
 const toggling = ref(true);
 const handleToggle = () => {
