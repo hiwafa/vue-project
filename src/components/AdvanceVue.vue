@@ -9,13 +9,23 @@
         <p>{{ textValue }}</p>
         <p>{{ textModel }}</p>
 
+        <br />
+
+        <button @click="handleToggle">Toggle Button</button>
+        <p v-if="toggling">This text will be toggled</p>
+
 
     </div>
 </template>
 
 <script setup>
-
 import { ref } from 'vue';
+
+
+const toggling = ref(true);
+const handleToggle = () => {
+    toggling.value = !toggling.value;
+}
 
 const textValue = ref("");
 const textModel = ref("");
@@ -38,5 +48,6 @@ const { topic, childClick } = defineProps({
     border: 1px solid lightblue;
     width: 100%;
     height: 300px;
+    overflow: auto;
 }
 </style>
