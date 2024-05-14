@@ -16,11 +16,21 @@
         <p>Computed Data: {{ computedValue }} </p>
         <p ref="onMountData">Hello</p>
 
+        <AdvanceCom @response="msg => {
+            childMsg = msg;
+        }" />
+        <p>Child Message: {{ childMsg }}</p>
+
     </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue';
+
+
+const childMsg = ref("No Message yet");
+import AdvanceCom from './AdvanceCom.vue';
+
 
 const onMountData = ref(null);
 
@@ -47,8 +57,6 @@ const textModel = ref("");
 const hanldeTextBinding = event => {
     textValue.value = event.target.value;
 }
-
-
 
 const { topic, childClick } = defineProps({
     topic: String,
