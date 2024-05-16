@@ -26,12 +26,17 @@
         }" :handleChildEvent="hanldeChildClick" />
         <p>{{ childMsg2 }}</p>
 
+
+        <AdvanceCom2>Hi: {{ childMsg2 }}</AdvanceCom2>
+
     </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue';
 
+
+import AdvanceCom2 from './AdvanceCom2.vue';
 
 import AdvaceCome1 from './AdvaceCome1.vue';
 const childMsg2 = ref("No Message From child");
