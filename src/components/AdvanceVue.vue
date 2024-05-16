@@ -23,7 +23,7 @@
 
         <AdvaceCome1 messageFromParent="Hi this is a Message From Parent" @handleFromChild="msg => {
             childMsg2 = msg
-        }" />
+        }" :handleChildEvent="hanldeChildClick" />
         <p>{{ childMsg2 }}</p>
 
     </div>
@@ -35,6 +35,9 @@ import { ref, computed, onMounted, watch } from 'vue';
 
 import AdvaceCome1 from './AdvaceCome1.vue';
 const childMsg2 = ref("No Message From child");
+const hanldeChildClick = msg => {
+    childMsg2.value = msg;
+}
 
 const childMsg = ref("No Message yet");
 import AdvanceCom from './AdvanceCom.vue';
